@@ -2,14 +2,12 @@
 
 @section('title', 'Agregar Marca')
 
-@section('body')
+@section('menu-izquierdo')
+    <x-marcas-sidebar />
+@endsection
 
-<div class="grid grid-cols-[25%_75%] gap-4 p-4 min-h-[calc(100vh-56px)]">
 
-    <!-- Contenido menu -->
-    <div class="bg-gray-200">
-        <x-marcas-sidebar/>             
-    </div>
+@section('contenido-central')
 
     <!-- Contenido principal -->
     <form method="POST" action="{{ route('marcas.guardar') }}" class="bg-white p-8 shadow-lg w-full max-w-md space-y-6" enctype="multipart/form-data">
@@ -38,12 +36,6 @@
         </div>
 
         <button type="submit" class="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition">Guardar</button>
-
     </form>
-
-
-
-</div>
-
 @endsection
 

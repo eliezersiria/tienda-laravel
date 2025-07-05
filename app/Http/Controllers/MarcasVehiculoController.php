@@ -52,8 +52,12 @@ class MarcasVehiculoController extends Controller
     public function show(MarcasVehiculo $marcasVehiculo)
     {
         //Listar marcas de vehículos
+        $inicio = microtime(true);
         $marcas = MarcasVehiculo::all();
-        return view('marcas.show-marcas', compact('marcas'));
+        $fin = microtime(true);
+        $numeroFilas = $marcas->count();
+        $tiempo = round($fin - $inicio, 3); // tiempo en segundos con 3 decimales
+        return view('marcas.show-marcas', compact('marcas','tiempo','numeroFilas'));
     }
 
     /**
