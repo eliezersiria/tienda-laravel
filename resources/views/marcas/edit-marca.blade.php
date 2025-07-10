@@ -2,9 +2,7 @@
 
 @section('title', 'Editar Marca')
 
-@section('body')
-
+@section('contenido-central')
 
 <p>{{ $marcasVehiculo->id }}</p>
-
 @endsection
