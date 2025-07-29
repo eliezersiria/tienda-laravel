@@ -1,9 +1,9 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\InicioController;
 use App\Http\Controllers\MarcasVehiculoController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,5 +26,4 @@ Route::get('/marcas', [MarcasVehiculoController::class, 'index'])->name('marcas.
 Route::get('/marcas/agregar', [MarcasVehiculoController::class, 'create'])->name('marcas.agregar');
 Route::post('/marcas/guardar', [MarcasVehiculoController::class, 'store'])->name('marcas.guardar');
 Route::get('/marcas/listar', [MarcasVehiculoController::class, 'show'])->name('marcas.listar');
-Route::get('/marcas/{marcasVehiculo}/editar', [MarcasVehiculoController::class, 'edit'])->name('marcas.editar');
-Route::get('/marcas/{marcasVehiculo}/eliminar', [MarcasVehiculoController::class, 'update'])->name('marcas.eliminar');
+Route::get('/marcas/editar-marca/{marcasVehiculo}', [MarcasVehiculoController::class, 'edit'])->name('marcas.editar');

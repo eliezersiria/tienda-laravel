@@ -28,10 +28,14 @@
             @foreach($marcas as $marca)
                 <tr class="hover:bg-gray-100">
                     <td>{{ $marca->nombre_marca }}</td>
-                    <td>{{ $marca->icono }}</td>
                     <td>
-                        <a href="{{ route('marcas.editar', $marca->id) }}" class="text-blue-500 hover:underline">Editar</a>
-                        <a href="{{ route('marcas.eliminar', $marca->id) }}" class="text-blue-500 hover:underline">Eliminar</a>
+                        @if($marca->icono)
+                            <img src="{{ Storage::url($marca->icono) }}" alt="Imagen" class="w-16 h-16 rounded object-cover">
+                        @endif
+                    </td>
+                    <td>
+                        <a href="{{ route('marcas.editar',$marca->id) }}" class="text-blue-500 hover:underline">Editar</a>
+                        <a href="{{ route('marcas.editar', $marca->id) }}" class="text-blue-500 hover:underline">Eliminar</a>
                     </td>
                 </tr>
             @endforeach

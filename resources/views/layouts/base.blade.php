@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>@yield('title', 'Mi Aplicación')</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @livewireStyles
 </head>
 
 
@@ -24,6 +25,6 @@
             <x-tiempo-carga-page />
         </div>
     </div>
-
+    @livewireScripts
 </body>
 </html>

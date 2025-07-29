@@ -35,7 +35,7 @@ class MarcasVehiculoController extends Controller
             'icono' => 'required|image|mimes:jpg,jpeg,png|max:2048'
         ]);
         
-        $nombreArchivo = $request->file('icono')->store('fotos','public');
+        $nombreArchivo = $request->file( 'icono')->store('fotos','public');
 
         MarcasVehiculo::create([
             'nombre_marca' => $request->nombre_marca,
@@ -65,7 +65,6 @@ class MarcasVehiculoController extends Controller
      */
     public function edit(MarcasVehiculo $marcasVehiculo)
     {
-        //
         return view('marcas.edit-marca', compact('marcasVehiculo'));
     }
 
@@ -74,7 +73,7 @@ class MarcasVehiculoController extends Controller
      */
     public function update(Request $request, MarcasVehiculo $marcasVehiculo)
     {
-        //
+        // 
     }
 
     /**
