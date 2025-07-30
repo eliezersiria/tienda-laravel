@@ -31,7 +31,6 @@ class EditarMarcaVehiculo extends Component
 
     public function actualizar()
     {
-        //sleep(2);
         $marca = MarcasVehiculo::findOrFail($this->MarcaId);
 
         $this->validate([
@@ -45,7 +44,7 @@ class EditarMarcaVehiculo extends Component
             // Eliminar imagen anterior si existe
             if ($marca->icono && Storage::exists($marca->icono))
             {
-                Storage::delete($marca->imagen);
+                Storage::delete($marca->icono);
             }
             $ruta = $this->nuevo_icono->store('public/fotos');
             $marca->icono = $ruta;

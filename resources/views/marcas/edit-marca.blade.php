@@ -31,6 +31,5 @@
     </nav>
     <br>
 
-
     @livewire('editar-marca-vehiculo', ['id' => $marcasVehiculo->id])
 @endsection
