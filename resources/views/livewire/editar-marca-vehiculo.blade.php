@@ -22,8 +22,18 @@
         </div>
 
         <div>
-            <label for="nueva_imagen" class="block font-bold">Nueva Imagen:</label>
+            <label for="nuevo_icono" class="block font-bold">Nueva Imagen:</label>
             <input wire:model="nuevo_icono" type="file" class="w-full border p-2 rounded">
+
+            <!-- Barra de carga -->
+            <div wire:loading wire:target="nuevo_icono" class="flex items-center gap-2">
+                <svg class="animate-spin h-8 w-8 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+                </svg>    
+            Subiendo...
+            </div>
+
             @error('nuevo_icono') <span class="text-red-500">{{ $message }}</span> @enderror
 
             @if ($nuevo_icono)

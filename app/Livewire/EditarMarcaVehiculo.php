@@ -57,13 +57,8 @@ class EditarMarcaVehiculo extends Component
             return;
         }
 
-        /*
         $marca->nombre_marca = $this->nombre_marca;
         $marca->save();
-        */
-        $marca->update([
-        'nombre_marca' => $this->nombre_marca
-    ]);
 
         session()->flash('mensaje', 'Producto actualizado exitosamente.');
     }

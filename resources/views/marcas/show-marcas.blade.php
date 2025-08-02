@@ -30,7 +30,7 @@
                     <td>{{ $marca->nombre_marca }}</td>
                     <td>
                         @if($marca->icono)
-                            <img src="{{ Storage::url($marca->icono) }}" alt="Imagen" class="w-16 h-16 rounded object-cover">
+                            <img src="{{ Storage::url($marca->icono) }}" alt="Imagen" class="w-7 h-7 rounded-lg object-cover">
                         @endif
                     </td>
                     <td>
