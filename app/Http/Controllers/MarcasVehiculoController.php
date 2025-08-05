@@ -68,12 +68,17 @@ class MarcasVehiculoController extends Controller
         return view('marcas.edit-marca', compact('marcasVehiculo'));
     }
 
+
+    public function eliminar(MarcasVehiculo $marcasVehiculo)
+    {
+        return view('marcas.eliminar-marca', compact('marcasVehiculo'));
+    }
     /**
      * Update the specified resource in storage.
      */
     public function update(Request $request, MarcasVehiculo $marcasVehiculo)
     {
-        // 
+        //
     }
 
     /**

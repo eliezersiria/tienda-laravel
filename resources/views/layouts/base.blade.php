@@ -8,19 +8,19 @@
 </head>
 
 
-<body class="bg-gray-100">
+<body>
     
     <!--Contenido del menu horizontal principal, no cambia-->
     <x-navbar />
 
     <div class="grid grid-cols-[25%_75%] gap-4 p-4 min-h-[calc(100vh-56px)]">
         <!--Contenido del menu izquierdo-->
-        <div class="bg-gray-200">
+        <div>
             @yield('menu-izquierdo')
         </div>
 
         <!--Contenido principal que será sobrescrito por layouts secundarios-->
-        <div class="bg-gray-200">
+        <div>
             @yield('contenido-central')
             <x-tiempo-carga-page />
         </div>

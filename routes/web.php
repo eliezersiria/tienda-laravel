@@ -27,3 +27,4 @@ Route::get('/marcas/agregar', [MarcasVehiculoController::class, 'create'])->name
 Route::post('/marcas/guardar', [MarcasVehiculoController::class, 'store'])->name('marcas.guardar');
 Route::get('/marcas/listar', [MarcasVehiculoController::class, 'show'])->name('marcas.listar');
 Route::get('/marcas/editar-marca/{marcasVehiculo}', [MarcasVehiculoController::class, 'edit'])->name('marcas.editar');
+Route::get('/marcas/eliminar-marca/{marcasVehiculo}', [MarcasVehiculoController::class, 'eliminar'])->name('marcas.eliminar');

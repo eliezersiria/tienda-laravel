@@ -35,7 +35,7 @@
                     </td>
                     <td>
                         <a href="{{ route('marcas.editar',$marca->id) }}" class="text-blue-500 hover:underline">Editar</a>
-                        <a href="{{ route('marcas.editar', $marca->id) }}" class="text-blue-500 hover:underline">Eliminar</a>
+                        <a href="{{ route('marcas.eliminar', $marca->id) }}" class="text-blue-500 hover:underline">Eliminar</a>
                     </td>
                 </tr>
             @endforeach

@@ -14,7 +14,7 @@
                 class="w-full border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
         </div>
 
-        <div>
+        <div class="w-1/2">
             <label class="block font-bold">Imagen actual:</label>
             @if ($icono)
                 <img src="{{ Storage::url($icono) }}" alt="Imagen" class="h-32 mb-2">
