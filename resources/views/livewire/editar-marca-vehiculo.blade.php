@@ -10,8 +10,7 @@
 
         <div class="w-1/2">
             <label for="nombre" class="block text-gray-700 font-semibold">Nombre:</label>
-            <input type="text" id="nombre" wire:model="nombre_marca"
-                class="w-full border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <input type="text" id="nombre" wire:model="nombre_marca" class="w-full border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
         </div>
 
         <div class="w-1/2">

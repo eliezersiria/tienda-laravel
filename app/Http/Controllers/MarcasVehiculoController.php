@@ -31,9 +31,13 @@ class MarcasVehiculoController extends Controller
     {
 
         $request->validate([
-            'nombre_marca' => 'required|string|max:255',
+            'nombre_marca' => 'required|string|max:255|unique:marcas_vehiculos,nombre_marca',
             'icono' => 'required|image|mimes:jpg,jpeg,png|max:2048'
-        ]);
+        ],
+        [
+            'nombre_marca.unique' => 'Este nombre de marca ya se encuentra registrado'
+        ]
+    );
         
         $nombreArchivo = $request->file( 'icono')->store('fotos','public');
 

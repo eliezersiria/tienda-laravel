@@ -13,8 +13,8 @@
             <li class="inline-flex items-center">
                 <a href="{{ route('marcas.listar')}}" class="inline-flex items-center text-gray-700 hover:text-blue-600">
                     <!-- ícono de casa (home) -->
-                    <svg class="w-5 h-5 mr-2 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M10 2L2 9h3v7h4v-4h2v4h4V9h3L10 2z" />
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
                     </svg>
                     Regresar
                 </a>
@@ -31,6 +31,6 @@
     </nav>
     <br>
 
-    @livewire('eliminar-marca-vehiculo', ['id' => $marcasVehiculo->id])
+    @livewire('eliminar-marca-vehiculo', ['MarcaId' => $marcasVehiculo->id])
 
 @endsection
