@@ -27,7 +27,7 @@ class EliminarMarcaVehiculo extends Component
         if ($marca)
         {
             sleep(1);
-            //$marca->delete();
+            $marca->delete();
 
             // Opcional: emitir mensaje o evento
             session()->flash('message', 'La marca '.$this->nombre_marca.' fue enviada a papelera.');
