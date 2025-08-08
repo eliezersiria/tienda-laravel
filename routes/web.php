@@ -28,3 +28,5 @@ Route::post('/marcas/guardar', [MarcasVehiculoController::class, 'store'])->name
 Route::get('/marcas/listar', [MarcasVehiculoController::class, 'show'])->name('marcas.listar');
 Route::get('/marcas/editar-marca/{marcasVehiculo}', [MarcasVehiculoController::class, 'edit'])->name('marcas.editar');
 Route::get('/marcas/eliminar-marca/{marcasVehiculo}', [MarcasVehiculoController::class, 'eliminar'])->name('marcas.eliminar');
+Route::get('/marcas/trash', [MarcasVehiculoController::class, 'trash'])->name('marcas.trash');
+

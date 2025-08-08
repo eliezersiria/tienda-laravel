@@ -77,6 +77,15 @@ class MarcasVehiculoController extends Controller
     {
         return view('marcas.eliminar-marca', compact('marcasVehiculo'));
     }
+
+    public function trash(MarcasVehiculo $marcasVehiculo)
+    {
+        $marcasEliminadas = MarcasVehiculo::onlyTrashed()->get();
+        return view('marcas.trash', compact('marcasEliminadas'));
+    }
+
+    
+
     /**
      * Update the specified resource in storage.
      */
