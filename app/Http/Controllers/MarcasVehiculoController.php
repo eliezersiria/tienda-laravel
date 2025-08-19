@@ -62,6 +62,7 @@ class MarcasVehiculoController extends Controller
         $numeroFilas = $marcas->count();
         $tiempo = round($fin - $inicio, 3); // tiempo en segundos con 3 decimales
         return view('marcas.show-marcas', compact('marcas','tiempo','numeroFilas'));
+        //return response()->json($marcas);
     }
 
     /**
