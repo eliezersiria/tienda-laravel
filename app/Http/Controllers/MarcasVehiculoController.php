@@ -85,7 +85,18 @@ class MarcasVehiculoController extends Controller
         return view('marcas.trash', compact('marcasEliminadas'));
     }
 
-    
+    public function eliminarMarca(Request $request)
+    {
+        // Recibir el id enviado desde Alpine
+        $id = $request->input('id');
+        $marca = MarcasVehiculo::onlyTrashed()->find($id);
+        if ($marca)
+        {
+            $marca->forceDelete();
+            return response()->json(['success' => true,'message' => 'Marca eliminada correctamente'], 200); // <- importante
+        }
+        return response()->json(['success' => false,'message' => 'Marca no encontrada'], 404);
+    }
 
     /**
      * Update the specified resource in storage.
@@ -102,4 +113,6 @@ class MarcasVehiculoController extends Controller
     {
         //
     }
+
+
 }
