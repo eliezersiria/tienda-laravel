@@ -21,7 +21,8 @@
             <tr class="bg-gray-200">
                 <th class="border border-gray-300 px-4 py-2 text-left">Nombre</th>
                 <th class="border border-gray-300 px-4 py-2 text-left">Icono</th>
-                <th class="border border-gray-300 px-4 py-2 text-left">Opciones</th>
+                <th class="border border-gray-300 px-4 py-2 text-left">Editar</th>
+                <th class="border border-gray-300 px-4 py-2 text-left">Eliminar</th>
             </tr>
         </thead>
         <tbody class="divide-y divide-gray-300">
@@ -33,10 +34,8 @@
                             <img src="{{ Storage::url($marca->icono) }}" alt="Imagen" class="w-7 h-7 rounded-lg object-cover">
                         @endif
                     </td>
-                    <td>
-                        <a href="{{ route('marcas.editar',$marca->id) }}" class="text-blue-500 hover:underline">Editar</a>
-                        <a href="{{ route('marcas.eliminar', $marca->id) }}" class="text-blue-500 hover:underline">Eliminar</a>
-                    </td>
+                    <td><a href="{{ route('marcas.editar',$marca->id) }}" class="text-blue-500 hover:underline">Editar</a></td>
+                    <td><a href="{{ route('marcas.eliminar', $marca->id) }}" class="text-blue-500 hover:underline">Eliminar</a></td>
                 </tr>
             @endforeach
 

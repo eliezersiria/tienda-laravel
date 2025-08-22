@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\MarcasVehiculo;
+use Illuminate\Support\Facades\Storage;
 
 class MarcasVehiculoController extends Controller
 {
@@ -89,9 +90,14 @@ class MarcasVehiculoController extends Controller
     {
         // Recibir el id enviado desde Alpine
         $id = $request->input('id');
-        $marca = MarcasVehiculo::onlyTrashed()->find($id);
-        if ($marca)
+        $marca = MarcasVehiculo::onlyTrashed()->find($id);        
+        if($marca)
         {
+            //BORRO LA FOTO            
+            if ($marca->icono && Storage::disk('public')->exists($marca->icono))
+            {
+                Storage::disk('public')->delete($marca->icono);
+            }
             $marca->forceDelete();
             return response()->json(['success' => true,'message' => 'Marca eliminada correctamente'], 200); // <- importante
         }

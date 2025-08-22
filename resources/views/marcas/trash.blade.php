@@ -25,7 +25,14 @@
             </thead>
             <tbody class="divide-y divide-gray-200">
                 @foreach ($marcasEliminadas as $marca)
-                    <tr class="hover:bg-gray-200" id="fila-{{ $marca->id }}" x-data="{ visible: true }" x-show="visible">
+                    <tr class="hover:bg-gray-200" id="row-{{ $marca->id }}" x-show="!hiddenRows.includes({{ $marca->id }})"
+                    x-transition:enter="transition ease-out duration-500"
+                    x-transition:enter-start="opacity-0 transform translate-y-2"
+                    x-transition:enter-end="opacity-100 transform translate-y-0"
+                    x-transition:leave="transition ease-in duration-300"
+                    x-transition:leave-start="opacity-100 transform translate-y-0"
+                    x-transition:leave-end="opacity-0 transform -translate-y-2">
+
                         <td class="px-4 py-3">{{ $marca->nombre_marca }}</td>
                         <td class="px-4 py-3">{{ $marca->deleted_at->format('d/m/Y H:i') }}</td>
                         <td class="px-4 py-3"><a href="#">Restaurar</a></td>
@@ -40,6 +47,7 @@
                                 Borrar
                             </button>
                         </td>
+
                     </tr>
                 @endforeach
             </tbody>

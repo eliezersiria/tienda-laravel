@@ -7,11 +7,14 @@ function userHandler() {
     return {
         selectedId: null,
         selectedNombreMarca: null,
+        selectedIdFila: null,
+        hiddenRows: [],
 
 
         confirmSend(el) {
             this.selectedId = el.dataset.id;
             this.selectedNombreMarca = el.dataset.nombremarca;
+            this.selectedIdFila = "fila-"+el.dataset.id;
 
             /*CODIGO DEL SWEET ALERT*/
             Swal.fire({
@@ -45,8 +48,20 @@ function userHandler() {
             })
             .then(response => response.json())
             .then(data => {
-                Swal.fire('Éxito', 'La marca fue eliminada correctamente', 'success');
                 console.log('Respuesta backend:', data);
+                Swal.fire('Éxito', 'La marca fue eliminada correctamente', 'success')
+                //OCULTAMOS LA FILA DESPUES DEL SEGUNDO ALERT
+                .then(() => {                    
+                    //CODIGO PARA OCULTAR UNA FILA TR
+                    if (!this.hiddenRows.includes(parseInt(this.selectedId)))
+                    {
+                        this.hiddenRows.push(parseInt(this.selectedId));
+                        console.log('Fila ocultada:', this.selectedId);
+                        console.log('Arreglo:', this.hiddenRows);
+                    }
+                    //FIN DEL CODIGO PARA OCULTAR UNA FILA TR
+                });
+                //FIN DEL COD OCULTAMOS LA FILA DESPUES DEL SEGUNDO ALERT
             })
             .catch(error => Swal.fire('Error', 'No se pudo realizar la operacion', 'error'));
         }
