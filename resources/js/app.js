@@ -7,3 +7,10 @@ Alpine.start();
 // app.js
 import Swal from 'sweetalert2';
 import './eliminar-marca.js';
+
+//Alpine focus
+import focus from '@alpinejs/focus'
+ 
+Alpine.plugin(focus)
+
+import 'penguinui';

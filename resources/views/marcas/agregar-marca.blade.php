@@ -11,8 +11,7 @@
 
     <div>
         <!-- Contenido principal -->
-        <form method="POST" action="{{ route('marcas.guardar') }}" class="p-8 w-full max-w-md space-y-6"
-            enctype="multipart/form-data">
+        <form method="POST" action="{{ route('marcas.guardar') }}" class="p-8 w-full max-w-md space-y-6" enctype="multipart/form-data">
             @csrf
 
             @if(session('success'))
@@ -41,5 +40,6 @@
             <button type="submit" class="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 transition">Guardar</button>
         </form>
 
-    </div>
+    </div>    
+
 @endsection

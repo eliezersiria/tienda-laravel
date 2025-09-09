@@ -54,7 +54,7 @@ class MarcasVehiculoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(MarcasVehiculo $marcasVehiculo)
+    public function show()
     {
         //Listar marcas de vehículos
         $inicio = microtime(true);
@@ -103,6 +103,19 @@ class MarcasVehiculoController extends Controller
         }
         return response()->json(['success' => false,'message' => 'Marca no encontrada'], 404);
     }
+
+    public function restaurarMarca(Request $request)
+    {
+        $id = $request->input('id');
+        $marca = MarcasVehiculo::onlyTrashed()->find($id);        
+        if($marca)
+        {
+            $marca->restore();
+            return response()->json(['status' => 'success','message' => 'Marca restaurada correctamente','id' => $marca->id]);
+        }
+    }
+
+
 
     /**
      * Update the specified resource in storage.

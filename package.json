@@ -15,7 +15,9 @@
         "vite": "^5.4.19"
     },
     "dependencies": {
+        "@alpinejs/focus": "^3.14.9",
         "alpinejs": "^3.14.9",
+        "penguinui": "^1.7.51",
         "sweetalert2": "^11.22.4"
     }
 }
