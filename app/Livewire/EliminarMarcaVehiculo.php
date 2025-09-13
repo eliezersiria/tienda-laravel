@@ -9,6 +9,7 @@ class EliminarMarcaVehiculo extends Component
 {
     public $MarcaId;
     public $nombre_marca;
+    public $icono;
     public $mostrarFormulario = true;
     public function mount($MarcaId)
     {
@@ -18,6 +19,7 @@ class EliminarMarcaVehiculo extends Component
         // Asigna los valores a las propiedades públicas del componente
         $this->MarcaId = $marca->id;
         $this->nombre_marca = $marca->nombre_marca;
+        $this->icono = $marca->icono;
 
     }
 
